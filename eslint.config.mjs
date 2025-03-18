@@ -1,13 +1,15 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+
 import eslintPluginImport from "eslint-plugin-import";
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import unusedImports from "eslint-plugin-unused-imports";
-import typescriptEslintParser from "@typescript-eslint/parser";
-import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
+
+import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
+import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -17,7 +19,7 @@ const compat = new FlatCompat({
   recommendedConfig: js.configs.recommended,
 });
 
-export default [
+const eslintConfig = [
   js.configs.recommended,
   ...compat.extends(
     "next/core-web-vitals",
@@ -126,4 +128,9 @@ export default [
       ],
     },
   },
+  {
+    ignores: ["node_modules/", ".next", "build", "out"],
+  },
 ];
+
+export default eslintConfig;

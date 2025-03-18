@@ -1,7 +1,8 @@
-import { JSX } from "@emotion/react/jsx-runtime";
-import { createContext, useState, useMemo, useContext } from "react";
-import { CssBaseline, ThemeProvider, useMediaQuery } from "@mui/material";
+import { createContext, useContext, useMemo, useState } from "react";
+
 import { darkTheme, lightTheme } from "@/components";
+import type { JSX } from "@emotion/react/jsx-runtime";
+import { CssBaseline, ThemeProvider, useMediaQuery } from "@mui/material";
 
 const ThemeContext = createContext({
   darkMode: false,

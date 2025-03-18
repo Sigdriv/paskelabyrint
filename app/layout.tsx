@@ -1,10 +1,12 @@
 "use client";
 
+import type { JSX } from "react";
+
+import { NavBar } from "@/components";
 import { Stack } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+
 import { ThemeProviderWrapper } from "./ThemeContext";
-import { JSX } from "react";
-import { NavBar } from "@/components";
 
 // export const metadata: Metadata = {
 //   title: "Kor ska oss reis",

@@ -1,4 +1,4 @@
-import { JSX } from "@emotion/react/jsx-runtime";
+import type { JSX } from "@emotion/react/jsx-runtime";
 import { Paper } from "@mui/material";
 
 interface Props {

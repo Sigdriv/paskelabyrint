@@ -1,8 +1,9 @@
 "use client";
 
+import { signIn } from "next-auth/react";
+
 import { ContentWrapper, Header1 } from "@/components";
 import { Button } from "@mui/material";
-import { signIn } from "next-auth/react";
 
 export default function Home() {
   return (
