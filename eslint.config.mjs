@@ -7,6 +7,7 @@ import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import unusedImports from "eslint-plugin-unused-imports";
 import typescriptEslintParser from "@typescript-eslint/parser";
 import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
+import js from "@eslint/js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -52,11 +53,10 @@ export default [
       "sort-imports": [
         "error",
         {
-          ignoreCase: false,
-          ignoreDeclarationSort: false,
+          ignoreDeclarationSort: true,
           ignoreMemberSort: false,
           memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
-          allowSeparatedGroups: false,
+          allowSeparatedGroups: true,
         },
       ],
       "react/react-in-jsx-scope": "off",
@@ -74,31 +74,48 @@ export default [
       "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/array-type": "error",
       "import/order": [
-        1,
+        "error",
         {
           groups: [
             "builtin",
             "external",
-            ["internal", "parent", "sibling", "index"],
+            "internal",
+            "parent",
+            "sibling",
+            "index",
           ],
           pathGroups: [
+            // React imports first
             {
               pattern: "react",
               group: "external",
               position: "before",
             },
             {
+              pattern: "react-**",
+              group: "external",
+              position: "before",
+            },
+            // External packages with @ prefix (but not @/)
+            {
+              pattern: "@*/**",
+              group: "external",
+              position: "after",
+            },
+            // Internal imports with @/ prefix
+            {
               pattern: "@/**",
               group: "internal",
               position: "after",
             },
+            // Relative imports last
             {
               pattern: "./**",
               group: "sibling",
               position: "after",
             },
           ],
-          pathGroupsExcludedImportTypes: ["react"],
+          pathGroupsExcludedImportTypes: ["react", "react-**"],
           "newlines-between": "always",
           alphabetize: {
             order: "asc",
