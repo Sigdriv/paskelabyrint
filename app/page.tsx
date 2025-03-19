@@ -2,8 +2,7 @@
 
 import { signIn } from "next-auth/react";
 
-import { ContentWrapper, Header1 } from "@/components";
-import { Button } from "@mui/material";
+import { Button, ContentWrapper, Header1 } from "@/components";
 
 export default function Home() {
   return (
