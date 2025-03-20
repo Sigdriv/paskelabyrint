@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 import { darkTheme, lightTheme } from "@/components";
 import type { JSX } from "@emotion/react/jsx-runtime";
@@ -9,19 +9,33 @@ const ThemeContext = createContext({
   toggleTheme: () => {},
 });
 
-export const ThemeProviderWrapper = ({
-  children,
-}: {
+interface Props {
   children: JSX.Element;
-}) => {
+}
+
+export const ThemeProviderWrapper = ({ children }: Props) => {
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
   const [darkMode, setDarkMode] = useState(
-    useMediaQuery("(prefers-color-scheme: dark)")
+    // TODO: Find out how to do this
+    // localStorage.getItem("theme") === "dark"
+    true
   );
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setDarkMode(storedTheme === "dark");
+    } else {
+      setDarkMode(prefersDarkMode);
+    }
+  }, [prefersDarkMode]);
 
   const theme = useMemo(() => (darkMode ? darkTheme : lightTheme), [darkMode]);
 
   const toggleTheme = () => {
     setDarkMode((prevMode) => !prevMode);
+    localStorage.setItem("theme", darkMode ? "light" : "dark");
   };
 
   return (

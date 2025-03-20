@@ -2,9 +2,12 @@
 
 import type { JSX } from "react";
 
+import { SnackbarProvider } from "notistack";
+
 import { NavBar } from "@/components";
 import { Stack } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { ThemeProviderWrapper } from "./ThemeContext";
 
@@ -16,6 +19,8 @@ import { ThemeProviderWrapper } from "./ThemeContext";
 //     "Kor ska oss reis, Påskelabyrinten, Påskelabyrint, NRK, Påske, Påskeegg, Påskequiz, Påskejakt, Påskegåte, Påskeoppgave, Påskekonkurranse, Rennebu, Berkåk, Oppdal, Trondheim, Melhus, Støren, Orkanger, Norge, Norway, Påskeferie, Påskeaktivitet, Påskelek, Påskeunderholdning, Påskekonkurranse, Påskequiz, Påskegåte, Påskeoppgave, Påskejakt, Påskeegg",
 // };
 
+const queryClient = new QueryClient();
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,13 +29,26 @@ export default function RootLayout({
   return (
     <html lang="no">
       <body>
-        <NavBar />
+        <AppRouterCacheProvider>
+          <ThemeProviderWrapper>
+            <QueryClientProvider client={queryClient}>
+              <SnackbarProvider
+                maxSnack={3}
+                autoHideDuration={6000}
+                dense
+                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+              >
+                <div>
+                  <NavBar />
 
-        <Stack minHeight="100vh" p="2rem">
-          <AppRouterCacheProvider>
-            <ThemeProviderWrapper>{children}</ThemeProviderWrapper>
-          </AppRouterCacheProvider>
-        </Stack>
+                  <Stack minHeight="100vh" p="2rem">
+                    {children}
+                  </Stack>
+                </div>
+              </SnackbarProvider>
+            </QueryClientProvider>
+          </ThemeProviderWrapper>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

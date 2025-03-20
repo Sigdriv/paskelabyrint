@@ -324,6 +324,13 @@ const lightTheme = createTheme({
   },
 
   components: {
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: colorsLight.secondary,
+        },
+      },
+    },
     MuiBreadcrumbs: {
       styleOverrides: {
         root: {
