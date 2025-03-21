@@ -1,5 +1,6 @@
 import { useId, useRef, useState } from 'react';
 
+import { useColors } from '@/utils';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import {
   Box,
@@ -41,6 +42,7 @@ export function TextInput({
   helperText = '',
   maxCharacters,
 }: Props) {
+  const { white } = useColors();
   const maxWidth =
     inputWidth === '10rem' || inputWidth === '15rem' ? '20rem' : inputWidth;
 
@@ -76,8 +78,9 @@ export function TextInput({
         sx={{
           width: inputWidth,
           borderRadius: '0.5rem',
+          backgroundColor: white,
         }}
-        type={type === 'password' && showPassword ? 'text' : 'password'}
+        type={type === 'password' && showPassword ? 'text' : type}
         value={value}
         variant="outlined"
         slotProps={{

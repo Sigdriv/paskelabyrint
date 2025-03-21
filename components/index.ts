@@ -1,4 +1,5 @@
 export { Button } from './Button';
+export { Card } from './Card';
 export { ContentWrapper } from './ContentWrapper';
 export { Header1, Header2, Header3, Header4, Header5 } from './Header';
 export { lightTheme, darkTheme } from './theme';

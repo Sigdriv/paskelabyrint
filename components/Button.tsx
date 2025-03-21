@@ -18,6 +18,7 @@ export interface ButtonProps {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   children: ReactNode;
   ariaLabel?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export function Button({
@@ -27,6 +28,7 @@ export function Button({
   onClick,
   children,
   ariaLabel,
+  type = 'button',
 }: ButtonProps) {
   return (
     <Box display="inline-flex" flexDirection="column" width={width}>
@@ -36,6 +38,7 @@ export function Button({
         onClick={onClick}
         onKeyDown={(e) => e.stopPropagation()}
         aria-label={ariaLabel}
+        type={type}
         sx={{
           backgroundColor:
             variant === 'outlined' ? 'primary.contrastText' : undefined,
