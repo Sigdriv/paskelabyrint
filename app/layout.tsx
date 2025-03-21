@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import type { JSX } from "react";
+import type { JSX } from 'react';
 
-import { SnackbarProvider } from "notistack";
+import { SnackbarProvider } from 'notistack';
 
-import { NavBar } from "@/components";
-import { Stack } from "@mui/material";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { NavBar } from '@/components';
+import { Stack } from '@mui/material';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import { ThemeProviderWrapper } from "./ThemeContext";
+import { ThemeProviderWrapper } from './ThemeContext';
 
 // export const metadata: Metadata = {
 //   title: "Kor ska oss reis",
@@ -36,7 +36,7 @@ export default function RootLayout({
                 maxSnack={3}
                 autoHideDuration={6000}
                 dense
-                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
               >
                 <div>
                   <NavBar />

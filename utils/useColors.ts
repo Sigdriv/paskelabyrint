@@ -1,4 +1,4 @@
-import { useTheme } from "@mui/material";
+import { useTheme } from '@mui/material';
 
 export function useColors() {
   const { secondary } = useTheme().palette;

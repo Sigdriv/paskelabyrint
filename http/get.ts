@@ -9,7 +9,7 @@ export async function get<T>({ url }: Params): Promise<T> {
 
   if (!res.ok) {
     // throw await resToTkError<ErrorData>(res);
-    throw new Error("Error fetching data");
+    throw new Error('Error fetching data');
   }
 
   const result = (await res.json()) as T & { message: string };

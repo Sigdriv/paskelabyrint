@@ -1,3 +1,3 @@
 export const urls = {
-  googleSignin: "/api/auth/google/login",
+  googleSignin: '/api/auth/google/login',
 };

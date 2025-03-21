@@ -1,22 +1,23 @@
-"use client";
+'use client';
 
-import { useGoogleSignin } from "@/api/hooks";
+import { useState } from 'react';
+
+import { useGoogleSignin } from '@/api/hooks';
 import {
   Button,
   ContentWrapper,
   Header1,
   Stack,
   TextInput,
-} from "@/components";
-import { useState } from "react";
+} from '@/components';
 
 export default function Page() {
   const { signinWithGoogle, isSigningIn } = useGoogleSignin();
   // const { signIn, isSigningInCredentials } = useCreadentialsSignin();
 
   const [credentials, setCredentials] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   return (
@@ -31,6 +32,20 @@ export default function Page() {
             handleChange={(value) =>
               setCredentials({ ...credentials, email: value })
             }
+            type="text"
+            value={credentials.email}
+            inputWidth="25rem"
+          />
+
+          <TextInput
+            label="Passord"
+            required
+            handleChange={(value) =>
+              setCredentials({ ...credentials, password: value })
+            }
+            type="password"
+            value={credentials.password}
+            inputWidth="25rem"
           />
 
           <div>

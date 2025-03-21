@@ -1,8 +1,8 @@
 .required::before {
-  content: "* ";
+  content: '* ';
 }
 
 .required-error::before {
-  content: "* ";
+  content: '* ';
   color: #891310;
 }

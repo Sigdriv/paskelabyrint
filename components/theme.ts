@@ -213,47 +213,47 @@
 //   },
 // });
 
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from '@mui/material/styles';
 
 const baseColorsLight = {
-  black: "#222", // Mørk grå, ikke helt svart
-  white: "#FFFFFF",
-  primary: "#37474F", // Dempet blågrå
-  secondary: "#ECEFF1", // Lys grå
-  light: "#F5F5F5", // Veldig lys grå
-  link: "#2962FF", // Klassisk blå link
-  grey: "#9E9E9E", // Medium grå
+  black: '#222', // Mørk grå, ikke helt svart
+  white: '#FFFFFF',
+  primary: '#37474F', // Dempet blågrå
+  secondary: '#ECEFF1', // Lys grå
+  light: '#F5F5F5', // Veldig lys grå
+  link: '#2962FF', // Klassisk blå link
+  grey: '#9E9E9E', // Medium grå
 };
 
 const successColorsLight = {
-  main: "#4CAF50", // Dempet grønn
-  light: "#E8F5E9",
-  dark: "#388E3C",
+  main: '#4CAF50', // Dempet grønn
+  light: '#E8F5E9',
+  dark: '#388E3C',
 };
 
 const infoColorsLight = {
-  main: "#03A9F4", // Dempet lyseblå
-  light: "#E1F5FE",
-  dark: "#0288D1",
+  main: '#03A9F4', // Dempet lyseblå
+  light: '#E1F5FE',
+  dark: '#0288D1',
 };
 
 const errorColorsLight = {
-  main: "#F44336", // Dempet rød
-  light: "#FFEBEE",
-  dark: "#D32F2F",
+  main: '#F44336', // Dempet rød
+  light: '#FFEBEE',
+  dark: '#D32F2F',
 };
 
 const warningColorsLight = {
-  main: "#FF9800", // Dempet oransje
-  light: "#FFF3E0",
-  dark: "#F57C00",
+  main: '#FF9800', // Dempet oransje
+  light: '#FFF3E0',
+  dark: '#F57C00',
 };
 
 const textColorsLight = {
-  primary: "#212121", // Mørk grå
-  secondary: "#424242", // Litt lysere mørk grå
-  disabled: "#BDBDBD", // Lys grå
-  contrast: "#FFFFFF",
+  primary: '#212121', // Mørk grå
+  secondary: '#424242', // Litt lysere mørk grå
+  disabled: '#BDBDBD', // Lys grå
+  contrast: '#FFFFFF',
 };
 
 const colorsLight = {
@@ -319,7 +319,7 @@ const lightTheme = createTheme({
   },
 
   typography: {
-    fontFamily: "sans-serif",
+    fontFamily: 'sans-serif',
     fontSize: 16,
   },
 
@@ -334,23 +334,23 @@ const lightTheme = createTheme({
     MuiBreadcrumbs: {
       styleOverrides: {
         root: {
-          backgroundColor: "inherit",
+          backgroundColor: 'inherit',
           color: colorsLight.text.contrast,
-          "& ol": {
-            width: "100%",
-            maxWidth: "68rem",
-            margin: "auto",
+          '& ol': {
+            width: '100%',
+            maxWidth: '68rem',
+            margin: 'auto',
           },
-          "& li": {
-            "&:last-of-type": {
-              fontWeight: "bold",
+          '& li': {
+            '&:last-of-type': {
+              fontWeight: 'bold',
             },
-            "&:not(:last-of-type)": {
-              "& a": {
-                textUnderlineOffset: "6px",
+            '&:not(:last-of-type)': {
+              '& a': {
+                textUnderlineOffset: '6px',
                 color: colorsLight.text.contrast,
-                "&:hover": {
-                  textDecorationThickness: "3px",
+                '&:hover': {
+                  textDecorationThickness: '3px',
                 },
               },
             },
@@ -361,11 +361,11 @@ const lightTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: "none",
+          textTransform: 'none',
         },
         outlined: {
-          ":hover": {
-            backgroundColor: "#E0E0E0",
+          ':hover': {
+            backgroundColor: '#E0E0E0',
           },
         },
       },
@@ -374,44 +374,44 @@ const lightTheme = createTheme({
 });
 
 const baseColorsDark = {
-  black: "#FFFFFF", // Hvit tekst
-  white: "#1E1E1E", // Mørk grå bakgrunn
-  primary: "#90A4AE", // Lysere gråblå
-  secondary: "#424242", // Mørkere grå for bakgrunnselementer
-  light: "#303030", // Litt lysere bakgrunn
-  link: "#90CAF9", // Lysere blå link
-  grey: "#757575", // Mørkere medium grå
+  black: '#FFFFFF', // Hvit tekst
+  white: '#1E1E1E', // Mørk grå bakgrunn
+  primary: '#90A4AE', // Lysere gråblå
+  secondary: '#424242', // Mørkere grå for bakgrunnselementer
+  light: '#303030', // Litt lysere bakgrunn
+  link: '#90CAF9', // Lysere blå link
+  grey: '#757575', // Mørkere medium grå
 };
 
 const successColorsDark = {
-  main: "#81C784",
-  light: "#424242",
-  dark: "#66BB6A",
+  main: '#81C784',
+  light: '#424242',
+  dark: '#66BB6A',
 };
 
 const infoColorsDark = {
-  main: "#64B5F6",
-  light: "#424242",
-  dark: "#42A5F5",
+  main: '#64B5F6',
+  light: '#424242',
+  dark: '#42A5F5',
 };
 
 const errorColorsDark = {
-  main: "#E57373",
-  light: "#424242",
-  dark: "#EF5350",
+  main: '#E57373',
+  light: '#424242',
+  dark: '#EF5350',
 };
 
 const warningColorsDark = {
-  main: "#FFB74D",
-  light: "#424242",
-  dark: "#FFA726",
+  main: '#FFB74D',
+  light: '#424242',
+  dark: '#FFA726',
 };
 
 const textColorsDark = {
-  primary: "#FFFFFF",
-  secondary: "#E0E0E0",
-  disabled: "#616161",
-  contrast: "#000000",
+  primary: '#FFFFFF',
+  secondary: '#E0E0E0',
+  disabled: '#616161',
+  contrast: '#000000',
 };
 
 const colorsDark = {
@@ -425,7 +425,7 @@ const colorsDark = {
 
 const darkTheme = createTheme({
   palette: {
-    mode: "dark", // Viktig for dark mode
+    mode: 'dark', // Viktig for dark mode
     contrastThreshold: 4.5,
     common: {
       black: colorsDark.black,
@@ -478,7 +478,7 @@ const darkTheme = createTheme({
   },
 
   typography: {
-    fontFamily: "sans-serif",
+    fontFamily: 'sans-serif',
     fontSize: 16,
   },
 
@@ -486,23 +486,23 @@ const darkTheme = createTheme({
     MuiBreadcrumbs: {
       styleOverrides: {
         root: {
-          backgroundColor: "inherit",
+          backgroundColor: 'inherit',
           color: colorsDark.text.contrast,
-          "& ol": {
-            width: "100%",
-            maxWidth: "68rem",
-            margin: "auto",
+          '& ol': {
+            width: '100%',
+            maxWidth: '68rem',
+            margin: 'auto',
           },
-          "& li": {
-            "&:last-of-type": {
-              fontWeight: "bold",
+          '& li': {
+            '&:last-of-type': {
+              fontWeight: 'bold',
             },
-            "&:not(:last-of-type)": {
-              "& a": {
-                textUnderlineOffset: "6px",
+            '&:not(:last-of-type)': {
+              '& a': {
+                textUnderlineOffset: '6px',
                 color: colorsDark.text.contrast,
-                "&:hover": {
-                  textDecorationThickness: "3px",
+                '&:hover': {
+                  textDecorationThickness: '3px',
                 },
               },
             },
@@ -513,11 +513,11 @@ const darkTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: "none",
+          textTransform: 'none',
         },
         outlined: {
-          ":hover": {
-            backgroundColor: "#37474F", // Litt lysere grå hover
+          ':hover': {
+            backgroundColor: '#37474F', // Litt lysere grå hover
           },
         },
       },

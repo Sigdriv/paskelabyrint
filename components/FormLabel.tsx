@@ -1,8 +1,8 @@
-import type { RefObject } from "react";
-import { useId } from "react";
+import type { RefObject } from 'react';
+import { useId } from 'react';
 
-import { FormLabel as MuiFormLabel } from "@mui/material";
-import "./FormLabel.css";
+import { FormLabel as MuiFormLabel } from '@mui/material';
+import './FormLabel.css';
 
 type FormLabelProps = {
   componentId?: string;
@@ -28,8 +28,8 @@ export function FormLabel({
 
   const className = required
     ? valid
-      ? "required"
-      : "required-error"
+      ? 'required'
+      : 'required-error'
     : undefined;
 
   const handleLabelClick = focusRefOnClick
@@ -44,7 +44,7 @@ export function FormLabel({
       htmlFor={componentId}
       id={labelId}
       sx={{
-        cursor: cursor ? "pointer" : "default",
+        cursor: cursor ? 'pointer' : 'default',
       }}
       onClick={handleLabelClick}
     >

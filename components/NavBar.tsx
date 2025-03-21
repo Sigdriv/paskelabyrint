@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
 
-import { useThemeContext } from "@/app/ThemeContext";
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { useThemeContext } from '@/app/ThemeContext';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 
-import { Button } from "./Button";
+import { Button } from './Button';
 
 export function NavBar() {
   const { toggleTheme } = useThemeContext();
@@ -14,20 +14,20 @@ export function NavBar() {
   return (
     <AppBar position="static">
       <Toolbar variant="dense">
-        <Button variant="text" onClick={() => router("/")}>
+        <Button variant="text" onClick={() => router('/')}>
           Home
         </Button>
-        <Button variant="text" onClick={() => router("/about")}>
+        <Button variant="text" onClick={() => router('/about')}>
           About
         </Button>
-        <Button variant="text" onClick={() => router("/contact")}>
+        <Button variant="text" onClick={() => router('/contact')}>
           Contact
         </Button>
         <Typography sx={{ flexGrow: 1 }} />
-        <Button variant="text" onClick={() => router("/auth/login")}>
+        <Button variant="text" onClick={() => router('/auth/login')}>
           Login
         </Button>
-        <Button variant="text" onClick={() => router("/auth/signup")}>
+        <Button variant="text" onClick={() => router('/auth/signup')}>
           Sign Up
         </Button>
         <Button variant="text" onClick={toggleTheme}>

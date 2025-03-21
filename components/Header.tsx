@@ -1,8 +1,8 @@
 /* eslint-disable react/no-children-prop */
-import { Typography } from "@mui/material";
+import { Typography } from '@mui/material';
 
 type HeaderProps = {
-  headerLevel?: "h1" | "h2" | "h3" | "h4" | "h5";
+  headerLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
   children: React.ReactNode;
 };
 
@@ -20,8 +20,8 @@ function HeaderBase({
       maxWidth="75ch"
       paddingBottom={paddingBottom}
       sx={{
-        wordBreak: "break-word",
-        wordWrap: "break-word",
+        wordBreak: 'break-word',
+        wordWrap: 'break-word',
       }}
     >
       {children}
@@ -29,7 +29,7 @@ function HeaderBase({
   );
 }
 
-export function Header1({ headerLevel = "h1", children }: HeaderProps) {
+export function Header1({ headerLevel = 'h1', children }: HeaderProps) {
   return (
     <HeaderBase
       headerLevel={headerLevel}
@@ -40,7 +40,7 @@ export function Header1({ headerLevel = "h1", children }: HeaderProps) {
   );
 }
 
-export function Header2({ headerLevel = "h2", children }: HeaderProps) {
+export function Header2({ headerLevel = 'h2', children }: HeaderProps) {
   return (
     <HeaderBase
       headerLevel={headerLevel}
@@ -51,7 +51,7 @@ export function Header2({ headerLevel = "h2", children }: HeaderProps) {
   );
 }
 
-export function Header3({ headerLevel = "h3", children }: HeaderProps) {
+export function Header3({ headerLevel = 'h3', children }: HeaderProps) {
   return (
     <HeaderBase
       headerLevel={headerLevel}
@@ -62,7 +62,7 @@ export function Header3({ headerLevel = "h3", children }: HeaderProps) {
   );
 }
 
-export function Header4({ headerLevel = "h4", children }: HeaderProps) {
+export function Header4({ headerLevel = 'h4', children }: HeaderProps) {
   return (
     <HeaderBase
       headerLevel={headerLevel}
@@ -73,7 +73,7 @@ export function Header4({ headerLevel = "h4", children }: HeaderProps) {
   );
 }
 
-export function Header5({ headerLevel = "h5", children }: HeaderProps) {
+export function Header5({ headerLevel = 'h5', children }: HeaderProps) {
   return (
     <HeaderBase
       headerLevel={headerLevel}

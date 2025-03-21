@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { Button, ContentWrapper, Header1 } from "@/components";
+import { Header1 } from '@/components';
 
 export default function Home() {
   return (

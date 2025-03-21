@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Header1, Stack, Text } from "@/components";
-import { useColors } from "@/utils";
-import { styled } from "@mui/material";
+import { Header1, Stack, Text } from '@/components';
+import { useColors } from '@/utils';
+import { styled } from '@mui/material';
 
 export default function NotFound() {
   const { link } = useColors();
 
   const StyledLink = styled(Link)({
-    textUnderlineOffset: "6px",
+    textUnderlineOffset: '6px',
     textDecorationColor: link,
     color: link,
-    "&:hover": {
-      textDecorationThickness: "3px",
-      cursor: "pointer",
+    '&:hover': {
+      textDecorationThickness: '3px',
+      cursor: 'pointer',
     },
   });
 
